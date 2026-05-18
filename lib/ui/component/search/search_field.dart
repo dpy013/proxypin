@@ -26,6 +26,8 @@ class _SearchFieldState extends State<SearchField> {
   final RxBool caseSensitive = RxBool(false);
   final RxBool isRegExp = RxBool(false);
 
+  String _localizedOrFallback(String? value, String fallback) => value ?? fallback;
+
   @override
   initState() {
     super.initState();
@@ -44,7 +46,10 @@ class _SearchFieldState extends State<SearchField> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
+    final previousTooltip = _localizedOrFallback(localizations?.searchPrevious, 'Previous result');
+    final nextTooltip = _localizedOrFallback(localizations?.searchNext, 'Next result');
+    final closeTooltip = _localizedOrFallback(localizations?.close, 'Close');
     double searchBoxWidth = min(450, MediaQuery.of(context).size.width - 20);
 
     final searchBox = SizedBox(
@@ -96,21 +101,21 @@ class _SearchFieldState extends State<SearchField> {
             if (Platforms.isDesktop()) Obx(() => SizedBox(width: 85, child: _getText())),
             if (Platforms.isMobile()) SizedBox(width: 10),
             IconButton(
-              tooltip: localizations.searchPrevious,
+              tooltip: previousTooltip,
               onPressed: widget.searchController.movePrevious,
               icon: const Icon(Icons.north, size: 17),
               visualDensity: VisualDensity.compact,
             ),
             SizedBox(width: 10),
             IconButton(
-              tooltip: localizations.searchNext,
+              tooltip: nextTooltip,
               onPressed: widget.searchController.moveNext,
               icon: const Icon(Icons.south, size: 17),
               visualDensity: VisualDensity.compact,
             ),
             const SizedBox(width: 3),
             IconButton(
-              tooltip: localizations.close,
+              tooltip: closeTooltip,
               iconSize: 19,
               icon: const Icon(Icons.close),
               onPressed: () => widget.searchController.closeSearch(),
