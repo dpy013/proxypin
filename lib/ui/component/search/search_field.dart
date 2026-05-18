@@ -51,17 +51,18 @@ class _SearchFieldState extends State<SearchField> {
     final nextTooltip = _localizedOrFallback(localizations?.searchNext, 'Next result');
     final closeTooltip = _localizedOrFallback(localizations?.close, 'Close');
     double searchBoxWidth = min(450, MediaQuery.of(context).size.width - 20);
+    final showDesktopCounter = Platforms.isDesktop() && searchBoxWidth >= 430;
 
     final searchBox = SizedBox(
       width: searchBoxWidth,
       child: Material(
           elevation: 1,
-          child: Row(mainAxisSize: MainAxisSize.min, mainAxisAlignment: MainAxisAlignment.end, children: [
-            SizedBox(
-              width: Platforms.isDesktop() ? 260 : 220,
-              child: TextField(
-                autofocus: true,
-                focusNode: focusNode,
+          child: Row(children: [
+             SizedBox(
+               width: showDesktopCounter ? 214 : max(140, searchBoxWidth - 236),
+               child: TextField(
+                 autofocus: true,
+                 focusNode: focusNode,
                 controller: widget.searchController.patternController,
                 onEditingComplete: () {
                   widget.searchController.moveNext();
@@ -98,7 +99,7 @@ class _SearchFieldState extends State<SearchField> {
                     })),
               ),
             ),
-            if (Platforms.isDesktop()) Obx(() => SizedBox(width: 85, child: _getText())),
+            if (showDesktopCounter) Obx(() => SizedBox(width: 85, child: _getText())),
             if (Platforms.isMobile()) SizedBox(width: 10),
             IconButton(
               tooltip: previousTooltip,
