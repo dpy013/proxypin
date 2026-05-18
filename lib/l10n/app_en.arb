@@ -181,6 +181,8 @@
   "timeAsc": "Ascending by time",
 
   "search": "Search",
+  "searchPrevious": "Previous result",
+  "searchNext": "Next result",
   "clearSearch": "Clear Search",
   "requestType": "Request type",
   "keyword": "Keyword",
@@ -208,6 +210,10 @@
   "responseBody": "Response Body",
   "requestRewrite": "Request Rewrite",
   "newWindow": "New Window",
+  "openGallery": "Open image from gallery",
+  "turnFlashlightOn": "Turn flashlight on",
+  "turnFlashlightOff": "Turn flashlight off",
+  "resizePane": "Resize pane",
   "httpRequest": "HTTP Request",
 
   "enabledHttps": "Enable HTTPS Proxy",

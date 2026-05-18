@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:proxypin/l10n/app_localizations.dart';
 import 'package:proxypin/ui/component/search/search_controller.dart';
 
 import '../../../utils/platform.dart';
@@ -43,6 +44,7 @@ class _SearchFieldState extends State<SearchField> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     double searchBoxWidth = min(450, MediaQuery.of(context).size.width - 20);
 
     final searchBox = SizedBox(
@@ -93,17 +95,22 @@ class _SearchFieldState extends State<SearchField> {
             ),
             if (Platforms.isDesktop()) Obx(() => SizedBox(width: 85, child: _getText())),
             if (Platforms.isMobile()) SizedBox(width: 10),
-            InkWell(
-              onTap: widget.searchController.movePrevious,
-              child: const Icon(Icons.north, size: 17),
+            IconButton(
+              tooltip: localizations.searchPrevious,
+              onPressed: widget.searchController.movePrevious,
+              icon: const Icon(Icons.north, size: 17),
+              visualDensity: VisualDensity.compact,
             ),
             SizedBox(width: 10),
-            InkWell(
-              onTap: widget.searchController.moveNext,
-              child: const Icon(Icons.south, size: 17),
+            IconButton(
+              tooltip: localizations.searchNext,
+              onPressed: widget.searchController.moveNext,
+              icon: const Icon(Icons.south, size: 17),
+              visualDensity: VisualDensity.compact,
             ),
             const SizedBox(width: 3),
             IconButton(
+              tooltip: localizations.close,
               iconSize: 19,
               icon: const Icon(Icons.close),
               onPressed: () => widget.searchController.closeSearch(),

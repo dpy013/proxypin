@@ -78,7 +78,7 @@ class RewriteUpdateState extends State<DesktopRewriteUpdate> {
             Expanded(
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [IconButton(onPressed: add, icon: const Icon(Icons.add)), const SizedBox(width: 10)],
+              children: [IconButton(tooltip: localizations.add, onPressed: add, icon: const Icon(Icons.add)), const SizedBox(width: 10)],
             ))
           ],
         ),

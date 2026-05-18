@@ -76,7 +76,7 @@ class RewriteUpdateState extends State<MobileRewriteUpdate> {
             Expanded(
                 child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [IconButton(onPressed: add, icon: const Icon(Icons.add)), const SizedBox(width: 10)],
+              children: [IconButton(tooltip: i18n.add, onPressed: add, icon: const Icon(Icons.add)), const SizedBox(width: 10)],
             ))
           ],
         ),

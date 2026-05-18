@@ -35,9 +35,10 @@ class _WindowsToolbarState extends State<WindowsToolbar> with WindowListener {
             padding: EdgeInsets.only(top: 2),
             child: Center(
                 child: Image.asset(
-              'assets/icon_foreground.png',
-              width: 32,
-            ))),
+               'assets/icon_foreground.png',
+               width: 32,
+               excludeFromSemantics: true,
+             ))),
         widget.title ?? SizedBox(),
         Expanded(child: DragToMoveArea(child: Container())),
         WindowCaptionButton.minimize(

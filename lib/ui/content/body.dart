@@ -241,18 +241,25 @@ class HttpBodyState extends State<HttpBodyWidget> {
 
     // Build common actions as widgets so we can either display them inline (desktop)
     // or move them into an overflow menu (mobile) to avoid hiding important buttons.
-    final searchBtn = InkWell(
-      key: searchIconKey,
-      child: const Icon(Icons.search, size: 20),
-      onTap: () {
-        if (searchController.isSearchOverlayVisible) {
-          searchController.removeSearchOverlay();
-        } else {
-          RenderBox renderBox = searchIconKey.currentContext?.findRenderObject() as RenderBox;
-          Offset position = renderBox.localToGlobal(Offset.zero);
-          searchController.showSearchOverlay(context, top: position.dy + renderBox.size.height + 50, right: 10);
-        }
-      },
+    final searchBtn = Tooltip(
+      message: localizations.search,
+      child: Semantics(
+        button: true,
+        label: localizations.search,
+        child: InkWell(
+          key: searchIconKey,
+          child: const Icon(Icons.search, size: 20),
+          onTap: () {
+            if (searchController.isSearchOverlayVisible) {
+              searchController.removeSearchOverlay();
+            } else {
+              RenderBox renderBox = searchIconKey.currentContext?.findRenderObject() as RenderBox;
+              Offset position = renderBox.localToGlobal(Offset.zero);
+              searchController.showSearchOverlay(context, top: position.dy + renderBox.size.height + 50, right: 10);
+            }
+          },
+        ),
+      ),
     );
 
     final copyBtn = isImage

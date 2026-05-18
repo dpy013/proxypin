@@ -75,10 +75,11 @@ class DrawerWidget extends StatelessWidget {
                       radius: 24,
                       backgroundColor: Colors.white,
                       child: Center(
-                          child: Image.asset(
-                        'assets/icon_foreground.png',
-                        width: 52,
-                      ))),
+                       child: Image.asset(
+                         'assets/icon_foreground.png',
+                         width: 52,
+                         excludeFromSemantics: true,
+                       ))),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Column(

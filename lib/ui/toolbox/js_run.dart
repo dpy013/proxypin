@@ -165,6 +165,7 @@ class _JavaScriptState extends State<JavaScript> {
             const SizedBox(width: 15),
             //copy
             IconButton(
+                tooltip: localizations.copy,
                 icon: Icon(Icons.copy, color: primaryColor, size: 18),
                 onPressed: () {
                   Clipboard.setData(ClipboardData(text: outLines.join("\n")));
@@ -201,6 +202,7 @@ class FullScreenCodeField extends StatelessWidget {
           title: Text("FullScreen Code Editor"),
           actions: [
             IconButton(
+              tooltip: AppLocalizations.of(context)!.close,
               icon: Icon(Icons.close),
               onPressed: () {
                 Navigator.of(context).pop();

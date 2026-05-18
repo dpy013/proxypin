@@ -537,6 +537,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get search => 'Search';
 
   @override
+  String get searchPrevious => 'Previous result';
+
+  @override
+  String get searchNext => 'Next result';
+
+  @override
   String get clearSearch => 'Clear Search';
 
   @override
@@ -613,6 +619,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get newWindow => 'New Window';
+
+  @override
+  String get openGallery => 'Open image from gallery';
+
+  @override
+  String get turnFlashlightOn => 'Turn flashlight on';
+
+  @override
+  String get turnFlashlightOff => 'Turn flashlight off';
+
+  @override
+  String get resizePane => 'Resize pane';
 
   @override
   String get httpRequest => 'HTTP Request';

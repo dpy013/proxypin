@@ -239,14 +239,14 @@ class _SslState extends State<SslWidget> {
                     Text("3.1 ${localizations.installCaDescribe}", style: const TextStyle(fontSize: 12)),
                     const SizedBox(height: 10),
                     Image.network("https://foruda.gitee.com/images/1689346516243774963/c56bc546_1073801.png",
-                        height: 270, width: 300)
+                        height: 270, width: 300, excludeFromSemantics: true)
                   ]),
                   const SizedBox(width: 10),
                   Column(children: [
                     Text("3.2 ${localizations.trustCaDescribe}", style: const TextStyle(fontSize: 12)),
                     const SizedBox(height: 10),
                     Image.network("https://foruda.gitee.com/images/1689346614916658100/fd9b9e41_1073801.png",
-                        height: 270, width: 300)
+                        height: 270, width: 300, excludeFromSemantics: true)
                   ])
                 ])
               ]);
@@ -298,11 +298,12 @@ class _SslState extends State<SslWidget> {
                                 ClipRRect(
                                     child: Align(
                                         alignment: Alignment.topCenter,
-                                        child: Image.network(
-                                          scale: 0.5,
-                                          "https://foruda.gitee.com/images/1710181660282752846/cb520c0b_1073801.png",
-                                          height: 460,
-                                        )))
+                                         child: Image.network(
+                                           scale: 0.5,
+                                           "https://foruda.gitee.com/images/1710181660282752846/cb520c0b_1073801.png",
+                                           height: 460,
+                                           excludeFromSemantics: true,
+                                         )))
                               ]),
                               ListView(
                                 children: [
@@ -339,6 +340,7 @@ class _SslState extends State<SslWidget> {
                                           child: Image.network(
                                             "https://foruda.gitee.com/images/1689352695624941051/74e3bed6_1073801.png",
                                             height: 530,
+                                            excludeFromSemantics: true,
                                           )))
                                 ],
                               ),

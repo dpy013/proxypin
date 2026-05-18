@@ -1140,6 +1140,18 @@ abstract class AppLocalizations {
   /// **'Search'**
   String get search;
 
+  /// No description provided for @searchPrevious.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous result'**
+  String get searchPrevious;
+
+  /// No description provided for @searchNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next result'**
+  String get searchNext;
+
   /// No description provided for @clearSearch.
   ///
   /// In en, this message translates to:
@@ -1283,6 +1295,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'New Window'**
   String get newWindow;
+
+  /// No description provided for @openGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Open image from gallery'**
+  String get openGallery;
+
+  /// No description provided for @turnFlashlightOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn flashlight on'**
+  String get turnFlashlightOn;
+
+  /// No description provided for @turnFlashlightOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn flashlight off'**
+  String get turnFlashlightOff;
+
+  /// No description provided for @resizePane.
+  ///
+  /// In en, this message translates to:
+  /// **'Resize pane'**
+  String get resizePane;
 
   /// No description provided for @httpRequest.
   ///

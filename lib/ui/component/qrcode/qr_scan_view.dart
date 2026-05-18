@@ -198,6 +198,7 @@ class _QrReaderViewState extends State<QeCodeScanView> with TickerProviderStateM
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     IconButton(
+                      tooltip: localizations.openGallery,
                       onPressed: () async {
                         final result = await FilePicker.platform.pickFiles(
                           type: FileType.image,
@@ -211,6 +212,7 @@ class _QrReaderViewState extends State<QeCodeScanView> with TickerProviderStateM
                       icon: Icon(Icons.photo_library, color: Colors.white, size: 35),
                     ),
                     IconButton(
+                      tooltip: openFlashlight ? localizations.turnFlashlightOff : localizations.turnFlashlightOn,
                       onPressed: setFlashlight,
                       icon: Icon(openFlashlight ? Icons.flash_on : Icons.flash_off, size: 35, color: Colors.white),
                     ),

@@ -535,6 +535,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get search => '搜索';
 
   @override
+  String get searchPrevious => '上一个结果';
+
+  @override
+  String get searchNext => '下一个结果';
+
+  @override
   String get clearSearch => '清除搜索';
 
   @override
@@ -611,6 +617,18 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get newWindow => '新窗口打开';
+
+  @override
+  String get openGallery => '从相册打开图片';
+
+  @override
+  String get turnFlashlightOn => '打开闪光灯';
+
+  @override
+  String get turnFlashlightOff => '关闭闪光灯';
+
+  @override
+  String get resizePane => '调整面板大小';
 
   @override
   String get httpRequest => 'HTTP请求';
@@ -1626,6 +1644,12 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
   String get search => '搜尋';
 
   @override
+  String get searchPrevious => '上一個結果';
+
+  @override
+  String get searchNext => '下一個結果';
+
+  @override
   String get clearSearch => '清除搜尋';
 
   @override
@@ -1702,6 +1726,18 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get newWindow => '新視窗開啟';
+
+  @override
+  String get openGallery => '從相簿開啟圖片';
+
+  @override
+  String get turnFlashlightOn => '開啟閃光燈';
+
+  @override
+  String get turnFlashlightOff => '關閉閃光燈';
+
+  @override
+  String get resizePane => '調整面板大小';
 
   @override
   String get httpRequest => 'HTTP請求';
